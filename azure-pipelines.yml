@@ -16,3 +16,11 @@ steps:
   inputs:
     url: 'https://www.benday.com/2021/08/18/azure-devops-tip-handling-strings-in-yaml-pipelines/'
     tagoptions: 'wcag2a'
+    testtitle: 'benday ado yaml string'
+
+- task: AccessibilityChecker@1
+  inputs:
+    url: 'https://www.benday.com/'
+    tagoptions: 'wcag2a'
+    testtitle: 'benday homepage'
+    
