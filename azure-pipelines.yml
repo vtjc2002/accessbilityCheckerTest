@@ -15,6 +15,6 @@ steps:
 
 - task: AccessibilityChecker@1
   inputs:
-    url: '/'
+    url: $(Build.ArtifactStagingDirectory) + '/'
     testtitle: 'Test Images'
     tagoptions: 'wcag2a, wcag2aa'
