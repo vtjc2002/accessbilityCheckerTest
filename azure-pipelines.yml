@@ -12,9 +12,7 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
 - task: AccessibilityChecker@1
   inputs:
-    url: $(Build.ArtifactStagingDirectory) + '/'
-    testtitle: 'Test Images'
-    tagoptions: 'wcag2a, wcag2aa'
+    url: 'https://www.benday.com/2021/08/18/azure-devops-tip-handling-strings-in-yaml-pipelines/'
+    tagoptions: 'wcag2a'
