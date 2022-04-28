@@ -10,9 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - task: SqlAzureDacpacDeployment@1
   inputs:
     azureSubscription: 'vtjc2002 azure'
