@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'vtjc2002 azure'
+    AuthenticationType: 'server'
+    ServerName: 'testoutprivatelinksqlserver.database.windows.net'
+    DatabaseName: 'adoprivatelinktest'
+    SqlUsername: 'sadmin'
+    SqlPassword: 'abc12345!'
+    deployType: 'InlineSqlTask'
+    SqlInline: 'INSERT INTO [dbo].[ErrorLog] (UserName,ErrorNumber,ErrorMessage) VALUES (''Johnson'',1234,''Deployment from ADO'')'
+    IpDetectionMethod: 'AutoDetect'
+    DeleteFirewallRule: false
